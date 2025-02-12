@@ -1,42 +1,32 @@
-E-commerce
+## E-commerce
 
+## Milestone-1
 
-Milestone-1
+-got overview of the e-commerce project Tech Stack.
+ MongoDB,nodeJS,expressJS,reactJS
 
-got overview of the e-commerce project Tech Stack.
+## Milestone 2:
 
-MongoDB,nodeJS,expressJS,reactJS
+-Worked on login Page.
+-Structure of react.
+-Using Tailwind css.
+-Used React-Dom
 
+## Milestone-3
 
-Milestone 2:
+-Implemented Express on the backend
+-Used MongoDBAtlas to create a cluster
+-Used mongoose to connect MongoDb with the backend
+-Made some error-handling changes
 
-Worked on login Page.
+## Milestone-4
 
-Structure of react.
+-Installed JSON token
+-Created the Multer file
 
-Using Tailwind css.
+## Milestone-5
 
-Used React-Dom
+-Created the SignUp page
+-Used Tailwind css
 
-
-Milestone-3
-
-Implemented Express on the backend
-
-Used MongoDBAtlas to create a cluster
-
-Used mongoose to connect MongoDb with the backend
-
-Made some error-handling changes
-
-
-Milestone-4
-
-Installed JSON token
-
-Created the Multer file
-
-
-Milestone-5
-Created the SignUp page
-Used Tailwind css
+## Milestone-6
