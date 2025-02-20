@@ -1,32 +1,31 @@
-const errorHandler = require('../utils/Error')
-
+const ErrorHandler= require('../utils/ErrorHandler')
 
 module.exports=(err,req,res,next)=>{
-    err.message=err.message||'something went wrong'
-    err.statuscode=err.statuscode
+    err.statusCode=err.statusCode||500
+    err.message = err.message
 
-    if(err.name=="CastError"){//mongodb id error-->mongodb should have 14 digit hexa decimal number if not we will get cast error
-        const message="send the correct id"
-        err= new errorHandler(message,400)
+  // wrong mongodb id error
+    if(err.name==="CastError"){
+        const message=`Resource is not found with this id.. Invalid ${this.err.path}`
+        err= new ErrorHandler(message,400)
     }
 
-    if(err.name=="11000"){
-        const message="id already exist"
-        err= new errorHandler(message,400)
-    }
-    
-    if(err.name=="jsonWebToken"){
+  //Duplicate key error
+      if(err.code ===11000){
+        const message =`Duplicate key ${Object.keys(err.keyValue)} entered`
+        err = new ErrorHandler(message ,400)
+      }
+     //wrong jwt error
+     if(err.name==="JsonWebTokenError"){
+        const message = 'Your url is invalid please try again letter'
+        err= new ErrorHandler(message,400)
+     }
 
-    }
-    
-    if(err.name=="jsonTokenexpired")
-    {
+     //jwt expired
+     if(err.name === "TokenExpiredError"){
+        const message='Your url is expired please try again'
+        err= new ErrorHandler(message,400)
+     }
 
-    }
-
-    res.status(err.statuscode).json({
-        success:"false",
-        message:err.message
-    })
-
+     res.status(err.statusCode).json({success:false,message:err.message})
 }
