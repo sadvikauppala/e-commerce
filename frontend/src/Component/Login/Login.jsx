@@ -1,55 +1,82 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import {IoMailSharp} from "react-icons/io5"
-import {LuEyeClosed} from "react-icons/lu"
-import server from "../../server"
-const Login = ()=>{
-    const [email,setEmail]=useState('')
-    const [password,setPassword]=useState('')
-    const [visible,setVisible]=useState(true)
-    const navigate=useNavigate()
-    const handleSubmit = async(e)=>{
-        e.preventDefault()
-        await axios.post(`${server}/login`,{email,password}).then(res=>{
-            console.log("login success")
-     navigate("/")
-     
-        }).catch((e)=>{
-            console.log(e.message)
-        })
-    }
-    return (
-<div className="h-screen flex justify-center items-center bg-gray-100">
-    <div className="box-border flex flex-col bg-slate-200 h-96 w-96 shadow-xl shadow-black-600 rounded-lg">
-        <div>
-            <h1 className="text-center text-2xl foont-bold mt-4">User Login</h1>
-        </div>
-    <div className="flex justify-center items-center m-8">
-        <form className="w-full flex flex-col justify-center items-center mt-4">
-        <div className="flex rounded-lg bg-sky-100 shadow-lg shadow-balck-50 w-full h-10 justify-between items-center">
-        <input className="w-full focus:outline-none text-start" type="email" required autoComplete="email" name="email" value={email} placeholder="Email" onChange={(e)=>setEmail(e.target.value)}/>
-        <IoMailSharp className="mr-4 h-8 w-8"/>
-        </div>
-        <div className="flex rounded-lg bg-sky-100 shadow-lg w-full h-10 justify-between items-center">
-        <input className="w-full focus:outline-none text-start" type={visible?"text":"password"} required autoComplete="current-password" name="password" value={password} placeholder="password" onChange={(e)=>setPassword(e.target.value)}/>
-        {
-           visible?(<LuEyeClosed className='mr-4 h-8 w-8' onClick={()=>setVisible(false)}/>):(<LuEye className='mr-4 h-8 w-8' onClick={()=>setVisible(false)} />)
-        }
-        </div>
-        <div className="w-full flex mt-2 justify-center">
-        <input className="ml-2" type="checkbox" />
-        <label className="text-xs ml-2">Remember me</label>
-        <a className="ml-6 text-xs text-sky-500" href="#">forgot Password?</a>
-        </div>
-        <button type="submit" className="w-full bg-cyan-400 text-center text-xl mt-5 rounded-lg h-10">Submit</button>
-        <div className="flex w-full mt-3 justify-center items-center">
-            <h6 className="text-xs">Don't have an account</h6>
-            <Link className="ml-3 text-xs text-sky-500">Sign-up</Link>
-        </div>
-        </form>
-       </div>
-    </div>
-</div>
-    )
+import React, { useState } from 'react'
+import { IoEye } from "react-icons/io5";
+import { IoEyeOffOutline } from "react-icons/io5";
+import { Link, useNavigate } from 'react-router-dom';
+import { IoMdMail } from "react-icons/io";
+import server from '../../server';
+import axios from 'axios'
+import { toast } from 'react-toastify';
+
+const Login = () => {
+  const navigate = useNavigate()
+const [email,setEmail]=useState('')
+const [password,setPassword] = useState('')
+const [visible,setVisible]=useState(false)
+
+const handleSubmit=async(e)=>{
+e.preventDefault()
+await axios.post(`${server}/login-user`,{email,password,},{withCredentials: true}).
+then(res=>{toast.success("login success!")
+  navigate("/")
+})
+.catch(err=>{console.log(err)
+  const errorMessage = err.response?.data?.message || 'Login failed!';
+  toast.error(errorMessage)})
 }
+
+  return (
+    <>
+    <div className='flex justify-center items-center  h-screen bg-gray-100'>
+      <div className='box-border flex flex-col justify-center items-center   rounded-lg shadow-xl shadow-black-600 w-96 h-96 bg-slate-200'>
+
+      <div>
+        <h1 className='text-center text-2xl font-bold'>
+            User Login
+        </h1>
+      </div>
+      <div>
+        
+            <form onSubmit={handleSubmit} className='flex flex-col items-center justify-center w-full'>
+               
+                <div className='flex w-full h-10 m-5 bg-sky-100 rounded-lg shadow-lg items-center'>
+                    <input className='w-full focus:outline-none text-start' type='email' name='email' placeholder='   Email'autoComplete='email' required value={email} onChange={(e)=>setEmail(e.target.value)}></input>
+               <IoMdMail className='w-8 h-8 mr-5'/>
+                </div>
+                
+               
+                <div className='flex w-full h-10 bg-sky-100 rounded-lg shadow-lg items-center'>
+                    <input className='w-full focus:outline-none'type={visible?"text":"password"} name='password' placeholder='   password' autoComplete='current-password' required value={password} onChange={(e)=>setPassword(e.target.value)}></input>
+                
+                { visible ? (<IoEye className='w-10 h-10 mr-5' onClick={()=>setVisible(false)}/>)
+                :
+                (<IoEyeOffOutline className='w-10 h-10 mr-5' onClick={()=>setVisible(true)}/>)
+              }
+                
+                </div>
+                    <div className='flex mt-4'>
+                        <input type="checkbox" name='remember-me'id='remember-me' />
+                        <label className='ml-1 text-xs'>remember me</label>
+                        <a href='#' className='text-xs text-sky-500 ml-4'>forgot password ?</a>
+                    </div>
+                    
+                    
+                    <button className='w-full bg-cyan-400 mt-5 h-10 text-xl font-bold rounded-lg shadow-lg ' type='submit' >submit</button>
+                
+                <div className='flex justify-evenly mt-2'>
+                    <h6>
+                        Not have any account?
+                    </h6>
+                    <Link className='text-sky-400 ml-3' to='/signup'>Sign up</Link>
+
+                </div>
+            </form>
+                </div>
+              </div>
+        </div>
+      
+    
+    </>
+  )
+}
+
 export default Login
