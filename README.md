@@ -51,6 +51,53 @@
 - Design the Homepage Layout:
 - Set up a grid layout or flexbox for displaying multiple cards neatly.
 
+  ### Milestone 9
+
+- Created the Createproduct.jsx
+- Collects product details such as name, description, category, tags, price, and stock.
+- Allows users to upload multiple images.
+- Displays a preview of uploaded images.
+- Uses useState for state management.
+
+### Milestone 10
+
+- Define product schema using Mongoose (name, description, price, image URL)
+- Add validation for required fields and data types
+- Create a POST endpoint to receive and store product data in MongoDB
+
+### Milestone 11
+
+- Create an API endpoint to send all product data.
+- Fetch data from the backend.
+- Pass it to the product card component.
+- Display the data dynamically.
+
+### Milestone 12
+
+- Create an API endpoint that filters and retrieves data from MongoDB based on the user's email.
+- Fetch data on the frontend by calling this API.
+- Dynamically display the data using the previously created product card component.
+
+### Milestone 13
+
+- Create an API endpoint that receives new data.
+- Use MongoDB’s update operation to modify the existing data.
+- Add an Edit button to the product card.
+- When clicked, the existing data is sent to a form.
+- Auto-fill the form with previous data.
+- Allow users to modify the data and save changes.
+
+### Milestone 14
+
+- Create an API endpoint to delete a product from MongoDB using its ID.
+- Implement a delete button in the frontend on each product card.
+- Send a delete request to the backend when the button is clicked.
+
+### Milestone 15
+
+- Uses React Router for navigation.
+- Created navigation bar.
 
 
->>>>>>> 14a52407a82dae2024a121bfb28472bb8a592874
+
+
