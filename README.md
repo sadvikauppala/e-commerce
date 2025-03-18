@@ -100,23 +100,23 @@
 
 ### Milestone 16
 
--Create a new page that displays all product data.
--Ensure each product has a quantity selection option.
--Add an "Add to Cart" button for each product.
+- Create a new page that displays all product data.
+- Ensure each product has a quantity selection option.
+- Add an "Add to Cart" button for each product.
 
 ### Milestone 17
 
--Created the cart schema to store products
+- Created the cart schema to store products
 
 ### Milestone 18
 
--Created an Backend endpoint for cart page
--An endpoint to get products inside cart for user
+- Created an Backend endpoint for cart page
+- An endpoint to get products inside cart for user
 
 ### Milestone 19
 
--Created cart frontend page and display the products
--For each product added an option to increase and decrease quantity using + and - buttons.
--Created an Backend endpoint for increase and decrease quantity
+- Created cart frontend page and display the products
+- For each product added an option to increase and decrease quantity using + and - buttons.
+- Created an Backend endpoint for increase and decrease quantity
 
 
