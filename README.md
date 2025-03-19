@@ -126,7 +126,7 @@
 - Displaying profile photo, name and email in one section
 - Another section to display address and add an button called "Add address"
 - Display "No address found" if it is not found
-- 
+  
 ### Milestone 21
 
 - Created address form frontend page
