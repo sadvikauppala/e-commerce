@@ -119,4 +119,21 @@
 - For each product added an option to increase and decrease quantity using + and - buttons.
 - Created an Backend endpoint for increase and decrease quantity
 
+### Milestone 20
 
+- Created an Backend endpoint that will sent user data
+- Created frontend profile page
+- Displaying profile photo, name and email in one section
+- Another section to display address and add an button called "Add address"
+- Display "No address found" if it is not found
+- 
+### Milestone 21
+
+- Created address form frontend page
+- Created an state that will store input address
+- Navigating address in profile to this form page.
+  
+### Milestone 22
+
+- Created an endpoint that will receive the address from address form in frontend
+- Added the address to the address array inside user collection.
