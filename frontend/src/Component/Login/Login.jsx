@@ -59,7 +59,7 @@ then(res=>{toast.success("login success!")
                         <a href='#' className='text-xs text-sky-500 ml-4'>forgot password ?</a>
                     </div>
                     
-                    
+                     
                     <button className='w-full bg-cyan-400 mt-5 h-10 text-xl font-bold rounded-lg shadow-lg ' type='submit' >submit</button>
                 
                 <div className='flex justify-evenly mt-2'>

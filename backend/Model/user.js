@@ -14,14 +14,14 @@ const userSchema = new mongoose.Schema({
 
 
     },
-    address:{
+    // address:{
         
-        country:{type:String,required:true},
-        city:{type:String,required:true},
-        address1:{type:String,required:true},
-        address2:{type:String,required:true},
-        pinCode:{type:Number,required:true},
-    },
+    //     country:{type:String},
+    //     city:{type:String,required:true},
+    //     address1:{type:String,required:true},
+    //     address2:{type:String,required:true},
+    //     pinCode:{type:Number,required:true},
+    // },
     role:{type:String,default:"user"},
     createdAt:{type:Date,default:Date.now()},
 
@@ -29,8 +29,8 @@ const userSchema = new mongoose.Schema({
 })
 
 
-userSchema.pre("save",async function () {
-    if(!this.modified('password'))
+userSchema.pre("save",async function (next) {
+    if(!this.isModified('password'))
         return next()
 
     await bcrypt.hash(this.password,10)
@@ -43,3 +43,6 @@ userSchema.methods.jsonTokens= function(){
 userSchema.methods.ComparePassword = async ()=> {
     
 }
+
+
+module.exports = mongoose.model("User",userSchema)
