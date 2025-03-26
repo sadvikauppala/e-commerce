@@ -137,3 +137,16 @@
 
 - Created an endpoint that will receive the address from address form in frontend
 - Added the address to the address array inside user collection.
+
+### Milestone 23
+
+- Created an placeorder button inside cart page and navigated to selected address page when clicked.
+- Created address page that will display all the available address and have an option to select one address.
+- An backend endpoint that will send all the addresses of the user.
+  
+### Milestone 24
+
+- First we display all the products we are ordering
+- Next we will display the address user selected to deliver
+- Display the total value of the cart
+- Place order button at the bottom.
