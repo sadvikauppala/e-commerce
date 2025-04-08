@@ -153,14 +153,14 @@
 
 ## Milestone 25
 
--Create an endpoint that will receive the products, user, address details
--Storing order details in mongodb order collection
+- Create an endpoint that will receive the products, user, address details
+- Storing order details in mongodb order collection
 
 ## Milestone 26
 
--Created an endpoint that will receive the user mail.
+- Created an endpoint that will receive the user mail.
 
 ## Milestone 27
 
--Created an my-orders page
--Added my-orders page in navbar for better navigation
+- Created an my-orders page
+- Added my-orders page in navbar for better navigation
