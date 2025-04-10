@@ -151,16 +151,41 @@
 - Display the total value of the cart
 - Place order button at the bottom.
 
-## Milestone 25
+### Milestone 25
 
-- Create an endpoint that will receive the products, user, address details
-- Storing order details in mongodb order collection
+- You need to create an endpoint that will receive the products, user, address details
+- You will get the mail of the user using that you need to retrive the _id of the user
+- For each product the order will be different with same address
+- using order schema you created earlier you will store order details in mongodb order collection
+  
+### Milestone 26
 
-## Milestone 26
+- You need to create an endpoint that will receive the user mail
+- You will get the mail of the user using that you need to retrive the _id of the user
+- Using that _id you need to get all the orders of that user
+- Send all the users orders in the response.
+  
+### Milestone 27
 
-- Created an endpoint that will receive the user mail.
+- You need to create an my-orders page
+- You will send an get request to my-orders endpoint that we created in previous milestone.
+- We will send user mail in to endpoint to get all the user orders
+- Display all the user orders
+- We will add my-orders page in navbar for better navigation.
+  
+### Milestone 28
 
-## Milestone 27
+- In my-orders page for every order add cancel order button
+- If the order is already canceled this button should not be displayed
+- You need to create an endpoint that will receive the order-id
+- Get the order using this id and mark the status canceled and save
+  
+### Milestone 29
 
-- Created an my-orders page
-- Added my-orders page in navbar for better navigation
+- Please create an PayPal account first PayPal developer dashboard
+- Once you login you can see an option for an sandbox accounts.
+- Copy the UserID of that account and save it.
+- In this sandbox accounts you can find your client id copy and save it.
+- In your order conformation page you need two options for payment one is COD and another is online payment.
+- Create radio buttons to select COD or online payment and when we click on online payment PayPal buttons need to be displayed.
+- In next milestone we will write an code to display and use those PayPal online Payments buttons.
